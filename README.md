@@ -1,4 +1,4 @@
-# BigData_AnalyticsAndSlicing
+# Big Data - Analytics & Slicing
 
 Contains following list of Java source files for Hadoop subsystem :
 
