@@ -23,18 +23,23 @@ public class Top25MovieRating_Reducer1 extends Reducer<FloatWritable, IntWritabl
     public void reduce(IntWritable key, Iterable<FloatWritable> values, Context context) throws IOException, InterruptedException {
         for (FloatWritable val : values) {
                 // puts the number of occurrences of this word into the map.
+            if (counter <= 25) {
                  countMap.put(val, key);
-        }
-    }
-
-    @Override
-    protected void cleanup(Context context) throws IOException, InterruptedException {
-        for (FloatWritable key: countMap.keySet()) {
-            if (counter++ == 25) {
-                break;
+                 counter = counter+1;
+            }else{
+                System.exit(1);
             }
-
-            context.write(key, countMap.get(key));
         }
     }
+
+//    @Override
+//    protected void cleanup(Context context) throws IOException, InterruptedException {
+//        for (FloatWritable key: countMap.keySet()) {
+//            if (counter++ == 25) {
+//                System.exit(1);
+//            }
+//
+//            context.write(key, countMap.get(key));
+//        }
+//    }
 }
