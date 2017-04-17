@@ -28,7 +28,7 @@ public class Structure_HierarchyDriver {
      */
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
         Configuration conf = new Configuration();
-        Job job = Job.getInstance(conf, "IP Address By Date");
+        Job job = Job.getInstance(conf, "Structure to Hierarchy");
         job.setJarByClass(Structure_HierarchyDriver.class);
 
         // pass file 1 to this mapper in Text format
