@@ -30,11 +30,13 @@ public class Binning_IPAddress_By_DayDriver {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf, "IP Address By Hour");
         job.setJarByClass(Binning_IPAddress_By_DayDriver.class);
+
         job.setMapperClass(Binning_IPAddress_By_Day_Mapper.class);
         job.setMapOutputKeyClass(NullWritable.class);
         job.setMapOutputValueClass(Text.class);
 
         MultipleOutputs.addNamedOutput(job, "textualBins", TextOutputFormat.class,  NullWritable.class, Text.class);
+        MultipleOutputs.addNamedOutput(job, "massaBins", TextOutputFormat.class,  NullWritable.class, Text.class);
         MultipleOutputs.setCountersEnabled(job, true);
 
         // set num of reduce tasks to 0

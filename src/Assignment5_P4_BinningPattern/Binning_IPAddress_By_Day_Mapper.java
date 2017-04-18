@@ -42,6 +42,7 @@ public class Binning_IPAddress_By_Day_Mapper extends Mapper<Object, Text, NullWr
             cal.setTime(fmt.parse(createDate)); //System.out.println("Month evaluated by format : " + fmt.parse(createDate)); //System.out.println("Month evaluated by cal : " + cal.get(Calendar.MONTH));
             createHour.set(cal.get(Calendar.HOUR_OF_DAY));
             multipleOutputs.write("textualBins", NullWritable.get(), value, createHour+"-hour");
+            multipleOutputs.write("massaBins", NullWritable.get(), value, createHour+"-trial-by-witnessing");
         } catch (ParseException e) {
             e.printStackTrace();
         }

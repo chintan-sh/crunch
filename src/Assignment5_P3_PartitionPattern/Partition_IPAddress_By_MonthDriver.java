@@ -30,7 +30,7 @@ public class Partition_IPAddress_By_MonthDriver {
         Job job = Job.getInstance(conf, "IP Address By Date");
         job.setJarByClass(Partition_IPAddress_By_MonthDriver.class);
         job.setMapperClass(Partition_IPAddress_By_Month_Mapper.class);
-        job.setCombinerClass(Partition_IPAddress_By_Month_Reducer.class);
+        //job.setCombinerClass(Partition_IPAddress_By_Month_Reducer.class);
         job.setMapOutputKeyClass(IntWritable.class);
         job.setMapOutputValueClass(Text.class);
 
