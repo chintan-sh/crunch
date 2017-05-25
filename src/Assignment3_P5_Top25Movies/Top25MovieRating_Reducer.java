@@ -30,4 +30,15 @@ public class Top25MovieRating_Reducer extends Reducer<IntWritable, FloatWritable
         result.set(avg);
         context.write(key, result);
     }
+
+    //    @Override
+//    protected void cleanup(Context context) throws IOException, InterruptedException {
+//        for (FloatWritable key: countMap.keySet()) {
+//            if (counter++ == 25) {
+//                System.exit(1);
+//            }
+//
+//            context.write(key, countMap.get(key));
+//        }
+//    }
 }
